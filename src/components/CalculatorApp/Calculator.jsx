@@ -6,18 +6,19 @@ const CalulatorApp = () =>{
 
     const [inputText, setInputText] = useState("");
     const [calculatedValue, setcalculatedValue] = useState('');
-    const intervalTimeId = useRef(null); 
+    //const intervalTimeId = useRef(null); 
 
     const handleClick = (value) =>{
-        debounceSearch(value);
+        //debounceSearch(value);
+        setInputText((prev) => prev+value);
     }
 
-    const debounceSearch = (value) => {
-        clearInterval(intervalTimeId.current);
-        intervalTimeId.current = setTimeout(()=>{
-            setInputText((prev) => prev+value);
-        },500);
-    }
+    // const debounceSearch = (value) => {
+    //     clearInterval(intervalTimeId.current);
+    //     intervalTimeId.current = setTimeout(()=>{
+    //         setInputText((prev) => prev+value);
+    //     },500);
+    // }
 
     const calculate = ()=>{
         if(inputText.length == 0)
